@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İsmail &amp; Suna — Wir heiraten</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="İsmail und Suna heiraten am 21. November 2026.">
+
+<!-- Vorschau beim Teilen in WhatsApp, Telegram, iMessage.
+     og:image braucht eine vollstaendige Adresse - relative Pfade ignorieren
+     die Messenger. Bei einem neuen Projekt hier die eigene Domain eintragen. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="İsmail &amp; Suna">
+<meta property="og:title" content="İsmail &amp; Suna — Wir heiraten">
+<meta property="og:description" content="21. November 2026 · Ceremony Eventlocation, Bottrop. Hier ist unsere Einladung.">
+<meta property="og:url" content="https://karten.einladungendigital.de/ismail-suna/">
+<meta property="og:image" content="https://karten.einladungendigital.de/ismail-suna/assets/img/vorschau.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="İsmail und Suna, 21. November 2026">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4efe4">
+<script>
+/* Browser stellen beim Neuladen die alte Bildlaufposition wieder her.
+   Bei einer Karte mit Umschlag-Intro heisst das: der Gast landet mitten
+   im Ablauf statt am Anfang. Ein Sprungziel in der Adresse bleibt gueltig. */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) {
+  window.scrollTo(0, 0);
+  addEventListener('DOMContentLoaded', () => window.scrollTo(0, 0));
+  addEventListener('load', () => { if (!location.hash) window.scrollTo(0, 0); });
+}
+</script>
+<link rel="stylesheet" href="css/style.css?v=202608292218">
+<link rel="stylesheet" href="css/karte.css?v=202608292218">
+</head>
+<body>
+
+<!-- ============ UMSCHLAG-INTRO ============ -->
+<div class="knopfleiste">
+<button class="sprachwahl" id="sprachwahl" type="button" aria-label="Sprache wechseln / Dili değiştir">
+  <!-- Als SVG gezeichnet, nicht als Emoji: Windows stellt Flaggen-Emoji
+       nur als Buchstabenpaar dar, dann staende dort "DE" statt einer Flagge. -->
+  <span class="flagge" id="fl-de" data-lang="de">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <clipPath id="rund-de"><circle cx="12" cy="12" r="11"/></clipPath>
+      <g clip-path="url(#rund-de)">
+        <rect x="0" y="1"  width="24" height="7.34" fill="#1a1a19"/>
+        <rect x="0" y="8.34" width="24" height="7.33" fill="#c8102e"/>
+        <rect x="0" y="15.67" width="24" height="7.33" fill="#e8b71a"/>
+      </g>
+      <circle cx="12" cy="12" r="11" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+    </svg>
+  </span>
+  <span class="flagge" id="fl-tr" data-lang="tr">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <clipPath id="rund-tr"><circle cx="12" cy="12" r="11"/></clipPath>
+      <g clip-path="url(#rund-tr)">
+        <rect x="0" y="0" width="24" height="24" fill="#e30a17"/>
+        <!-- Halbmond: weisser Kreis, vom roten teilweise ueberdeckt -->
+        <circle cx="10.4" cy="12" r="5" fill="#fff"/>
+        <circle cx="11.9" cy="12" r="4" fill="#e30a17"/>
+        <path d="M16.9 12 l3.72 1.21 -2.3 -3.16 0 3.9 2.3 -3.16 z" fill="#fff"/>
+      </g>
+      <circle cx="12" cy="12" r="11" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="1"/>
+    </svg>
+  </span>
+</button>
+
+</div>
+
+<div id="envelope-screen" class="screen">
+  <div class="env-inner">
+    <p class="env-kicker" id="env-kicker">Eine Einladung für dich</p>
+    <button class="envelope" id="envelope" aria-label="Einladung öffnen">
+      <div class="env-buehne">
+        <!-- Die Karte steckt im Umschlag und gleitet beim Oeffnen heraus -->
+        <div class="env-karte" id="env-karte" aria-hidden="true">
+          <span class="ek-linie"></span>
+          <span class="ek-namen" id="ek-namen">İsmail &amp; Suna</span>
+          <span class="ek-linie"></span>
+        </div>
+        <svg viewBox="0 0 200 140" class="env-svg" aria-hidden="true">
+          <rect x="4" y="24" width="192" height="112" rx="6" class="env-body"/>
+          <path d="M4 30 L100 96 L196 30" class="env-flap-back"/>
+          <!-- Vorderseite verdeckt die Karte, bis sie ganz heraus ist -->
+          <path d="M4 136 L100 74 L196 136 Z" class="env-front"/>
+          <path d="M4 136 L4 30 L100 92 L196 30 L196 136 Z" class="env-front"/>
+          <path class="env-seal-ring" d="M100 74 m-13 0 a13 13 0 1 0 26 0 a13 13 0 1 0 -26 0"/>
+          <g class="env-flap" id="env-flap">
+            <path d="M4 30 L100 96 L196 30 L196 24 L4 24 Z" class="env-flap-shape"/>
+          </g>
+        </svg>
+      </div>
+    </button>
+    <p class="env-hint">Tippe auf den Umschlag</p>
+  </div>
+</div>
+
+<!-- ============ HERO: DIE FAHRT ============ -->
+<section id="hero" class="hero" aria-label="Animierte Einladung">
+  <button id="skip" class="skip" hidden>Überspringen</button>
+
+  <div class="hero-grund" aria-hidden="true">
+    <img src="assets/img/allee.webp?v=202608292218" alt="" decoding="async">
+  </div>
+
+  <svg id="scene" class="scene" viewBox="0 0 1000 1800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <!-- Maske: enthuellt den Schriftzug fortschreitend von oben nach unten -->
+      <mask id="revealMask">
+        <rect id="reveal-rect" x="0" y="0" width="1000" height="0" fill="#fff"/>
+      </mask>
+      <filter id="tempo" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur id="tempo-blur" stdDeviation="0 0"/>
+      </filter>
+      <filter id="weich" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="20"/>
+      </filter>
+      <linearGradient id="vignette" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#2a2118" stop-opacity=".5"/>
+        <stop offset="26%"  stop-color="#2a2118" stop-opacity="0"/>
+        <stop offset="70%"  stop-color="#2a2118" stop-opacity="0"/>
+        <stop offset="100%" stop-color="#2a2118" stop-opacity=".72"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Die Allee -->
+    <image href="assets/img/allee.webp?v=202608292218" x="0" y="0" width="1000" height="1800"
+           preserveAspectRatio="xMidYMid slice"/>
+
+    <!-- Perlen, die aus dem Heck rieseln -->
+    <g id="pearls"></g>
+
+    <!-- Schriftzug + Herz, als Perlenkette, maskiert -->
+    <g mask="url(#revealMask)">
+      <g id="script-group">
+      </g>
+    </g>
+
+    <path id="heart" opacity="0" fill="none" stroke="#fff6e8" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="0.5 9"
+            d="M500 1284 c-22 -33 -70 -25 -70 12 c0 33 44 55 70 81 c26 -26 70 -48 70 -81 c0 -37 -48 -45 -70 -12 z"/>
+
+    <!-- Der Wagen -->
+    <g id="car" opacity="0">
+      <!-- Sonne steht links: der Schatten faellt nach rechts unten -->
+      <!-- Der Schatten bleibt unter dem Wagen. Steht er zu weit rechts,
+           schaut er neben der Karosserie hervor und sieht aus wie
+           ein zweites, dunkles Auto. -->
+      <ellipse cx="22" cy="48" rx="102" ry="262" fill="#120d07" opacity=".34" filter="url(#weich)"/>
+      <g filter="url(#tempo)">
+        <image href="assets/img/wagen.webp?v=202608292218" x="-150" y="-320" width="300" height="639"/>
+      </g>
+    </g>
+
+    <!-- Licht + Vignette -->
+    <rect width="1000" height="1800" fill="url(#vignette)" style="pointer-events:none"/>
+  </svg>
+
+  <div class="hero-caption" id="hero-caption">
+    <p class="hc-line">wir heiraten</p>
+    <p class="hc-date" id="hc-date">21. November 2026</p>
+  </div>
+
+  <div class="scroll-cue" id="scroll-cue">
+    <span>Weiter</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </div>
+</section>
+
+<main id="karte">
+  <!-- ---------- Kopf der Karte ---------- -->
+  <section class="sek kopf" id="sek-kopf">
+    <div class="kulisse" aria-hidden="true">
+      <img class="kulisse-grund" data-px="5" src="assets/img/rahmen.webp?v=202608292218" alt="" loading="eager" decoding="async">
+      <div class="tauben" id="tauben"></div>
+      <div class="falterfeld" id="falterfeld"></div>
+      <span class="kulisse-schleier"></span>
+    </div>
+    <p class="monogramm rv" data-rv="1" id="monogramm" aria-hidden="true"></p>
+    <p class="ueberzeile rv" data-rv="2" id="kopf-ueber">Die Einladung</p>
+    <h1 class="paarnamen rv" data-rv="2"><span id="k-namen">İsmail &amp; Suna</span></h1>
+    <p class="kopf-zeile rv" data-rv="3"><span id="k-zeile">wir heiraten</span></p>
+    <div class="datum rv" data-rv="4">
+      <span class="datum-strich"></span>
+      <span class="datum-monat" id="d-monat"></span>
+      <span class="datum-tag" id="d-tag"></span>
+      <span class="datum-jahr" id="d-jahr"></span>
+      <span class="datum-strich"></span>
+    </div>
+    <p class="datum-wochentag rv" data-rv="5" id="d-wochentag"></p>
+
+    <p class="merken rv" data-rv="6" id="merken-text">Erinnerung hinzufügen</p>
+    <!-- Ein Knopf fuer alle Geraete: die Karte erzeugt eine Kalenderdatei,
+         die iPhone, Android und Rechner gleichermassen verstehen. Kein
+         Umweg ueber Google, kein Konto noetig. -->
+    <div class="kalender-knoepfe rv" data-rv="7">
+      <button class="knopf knopf-linie knopf-kalender" id="btn-kalender" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="knopf-icon"><path d="M7 3v3M17 3v3M4 9h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9.5 14.4l1.9 1.9 3.4-3.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="btn-kalender-text">Termin speichern</span>
+      </button>
+    </div>
+  </section>
+  <!-- ---------- Ein Bild, das die Seite einmal aufreisst ---------- -->
+  <section class="grossbild" id="sek-zitat" aria-label="Bildmoment">
+    <img class="gb-bild" data-px="8" src="assets/img/g4-tafel.webp?v=202608292218" alt="" loading="lazy" decoding="async">
+    <span class="gb-schleier"></span>
+    <div class="gb-text">
+      <p class="gb-gross rv" data-rv="1" id="zitat-gross"></p>
+      <p class="gb-klein rv" data-rv="2" id="zitat-klein"></p>
+    </div>
+  </section>
+  <!-- ---------- Countdown (Kontrastmoment, volle Breite) ---------- -->
+  <section class="sek-breit countdown" id="sek-countdown" aria-label="Countdown">
+    <img class="cd-grund" data-px="7" src="assets/img/g5-lichter.webp?v=202608292218" alt="" loading="lazy" decoding="async">
+    <span class="cd-schleier"></span>
+    <p class="ueberzeile hell" id="cd-ueber">Noch</p>
+    <div class="cd-reihe" id="cd-reihe" role="timer" aria-live="off">
+      <div class="cd-feld"><span class="cd-zahl" id="cd-t">–</span><span class="cd-label" id="cd-l-tage">Tage</span></div>
+      <div class="cd-feld"><span class="cd-zahl" id="cd-s">–</span><span class="cd-label" id="cd-l-stunden">Stunden</span></div>
+      <div class="cd-feld"><span class="cd-zahl" id="cd-m">–</span><span class="cd-label" id="cd-l-minuten">Minuten</span></div>
+      <div class="cd-feld"><span class="cd-zahl" id="cd-k">–</span><span class="cd-label" id="cd-l-sekunden">Sekunden</span></div>
+    </div>
+    <p class="cd-fuss" id="cd-fuss"></p>
+  </section>
+
+  <!-- Zwei Bloecke nebeneinander, sobald der Platz reicht -->
+  <div class="doppel">
+  <!-- ---------- Anrede ---------- -->
+  <section class="sek anrede" id="sek-anrede">
+    <p class="fliess gross rv" data-rv="1" id="a-text"></p>
+    <p class="signatur rv" data-rv="2" id="a-gruss"></p>
+  </section>
+  </div>
+
+  <!-- Zwei Bloecke nebeneinander, sobald der Platz reicht -->
+  <div class="doppel">
+  <!-- ---------- Ort ---------- -->
+  <section class="sek ort" id="sek-ort">
+    <h2 class="sek-titel rv" data-rv="1" id="ort-titel">Wo</h2>
+    <div class="ort-raster">
+      <div>
+        <p class="ort-name rv" data-rv="2" id="o-name"></p>
+        <address class="ort-adresse rv" data-rv="3" id="o-adresse"></address>
+      </div>
+      <div class="kartenbild rv" data-rv="4" id="kartenbild"></div>
+    </div>
+    <div class="knopf-paar rv" data-rv="5">
+      <a class="knopf knopf-voll" id="btn-google" href="#" target="_blank" rel="noopener noreferrer"><span id="btn-google-text">Route mit Google Maps</span></a>
+      <a class="knopf knopf-linie" id="btn-apple" href="#" target="_blank" rel="noopener noreferrer"><span id="btn-apple-text">Apple Karten</span></a>
+    </div>
+    <p class="ort-hinweis rv" data-rv="6" id="o-hinweis"></p>
+  </section>
+  </div>
+  <!-- ---------- Familien ---------- -->
+  <section class="sek familien" id="sek-familien">
+    <h2 class="sek-titel rv" data-rv="1" id="familien-titel">Mit uns freuen sich</h2>
+    <div class="fam-liste" id="fam-liste"></div>
+  </section>
+  <!-- ---------- Galerie (volle Breite) ---------- -->
+  <section class="sek-breit galerie" id="sek-galerie">
+    <h2 class="sek-titel schmal-zentriert" id="galerie-titel">Wir zwei</h2>
+    <div class="gal-band" id="gal-band"></div>
+  </section>
+  <!-- ---------- Abschied ---------- -->
+  <section class="grossbild abschied" id="sek-abschied" aria-label="Abschied">
+    <img class="gb-bild" data-px="8" src="assets/img/g1-strauss.webp?v=202608292218" alt="" loading="lazy" decoding="async">
+    <span class="gb-schleier"></span>
+    <div class="gb-text">
+      <p class="ab-gross rv" data-rv="1" id="abschied-gross"></p>
+      <p class="gb-klein rv" data-rv="2" id="abschied-text"></p>
+    </div>
+  </section>
+
+  <footer class="fuss">
+    <p class="fuss-namen" id="f-namen"></p>
+    <p class="fuss-datum" id="f-datum"></p>
+    <hr class="linie">
+    <p class="fuss-klein" id="f-recht"></p>
+    <p class="fuss-klein" id="f-hoster"></p>
+  </footer>
+</main>
+
+<!-- Galerie in gross -->
+<div class="lupe" id="lupe" role="dialog" aria-modal="true" aria-label="Bild in groß">
+  <button class="lupe-blaettern lupe-zurueck" id="lupe-zurueck" type="button" aria-label="Vorheriges Bild">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <img id="lupe-bild" alt="" decoding="async" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+  <button class="lupe-blaettern lupe-vor" id="lupe-vor" type="button" aria-label="Nächstes Bild">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="lupe-zu" id="lupe-zu" type="button" aria-label="Schließen">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <p class="lupe-text" id="lupe-text"></p>
+</div>
+
+<script src="js/config.js?v=202608292218"></script>
+<script src="js/hero.js?v=202608292218"></script>
+<script src="js/karte.js?v=202608292218"></script>
+</body>
+</html>

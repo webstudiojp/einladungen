@@ -1,0 +1,4 @@
+# Diese Einladungen enthalten personenbezogene Daten und gehoeren nicht
+# in Suchmaschinen. Ueber den Link erreichbar, ueber Google nicht.
+User-agent: *
+Disallow: /
