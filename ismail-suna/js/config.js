@@ -11,7 +11,7 @@ window.HOCHZEIT = {
 
   // Wird von bin/veroeffentlichen.sh gesetzt und an alle Bilder gehaengt,
   // damit Browser nach einer Aenderung nicht die alte Fassung zeigen.
-  version: '202608312001',
+  version: '202608312254',
 
   /* ---------- Sprachen ---------- */
   standardsprache: 'de',
@@ -39,6 +39,18 @@ window.HOCHZEIT = {
     ueberspringbar: true,
   },
 
+  /* ---------- Musik ----------
+     Startet beim Antippen des Umschlags - vorher lassen Browser keinen
+     Ton zu. Der Gast kann sie jederzeit oben abschalten, die Wahl wird
+     gemerkt. Aktuell die Aufnahme aus der Vorlage; siehe
+     assets/audio/HIER-MUSIK-ABLEGEN.txt zum Austauschen. */
+  musik: {
+    datei:  'assets/audio/musik.mp3',
+    titel:  'Ney-Solo, CC0 (Platzhalter - Musikwunsch steht noch aus)',
+    starten: true,
+    lautstaerke: 0.42,
+  },
+
   /* ---------- Ort (sprachneutral) ---------- */
   ort: {
     strasse: 'An der Knippenburg 115',
@@ -58,7 +70,9 @@ window.HOCHZEIT = {
     { schluessel: 'brautseite',
       namen:    ['Hasret und der verstorbene Süleyman Çıkın'],
       namen_tr: ['Hasret ve merhum Süleyman Çıkın'] },
-    { schluessel: 'trauzeugen',      namen: ['Annemaria Amedahevi', 'Küşat Altun'] },
+    /* Annemaria auf ihrer Seite, Kürşat und Ali auf seiner. */
+    { schluessel: 'trauzeugen',
+      namen: ['Annemaria Amedahevi', 'Kürşat Altun', 'Ali Fatiras'] },
   ],
 
   /* ---------- Geschenke ---------- */
@@ -199,6 +213,7 @@ window.HOCHZEIT = {
       geschenkTitel: 'Geschenke',
       geschenkText: 'Ihr müsst nichts mitbringen. Wer uns trotzdem etwas schenken möchte: '
                   + '[Text folgt, falls dieser Abschnitt zurueckkommt]',
+      musikAn: 'Musik ausschalten', musikAus: 'Musik einschalten',
       kopieren: 'Kopieren', kopiert: 'Kopiert', kopierenHand: 'Bitte von Hand kopieren',
 
       rsvpTitel: 'Sagt ihr uns Bescheid?',
@@ -322,6 +337,7 @@ window.HOCHZEIT = {
       geschenkTitel: 'Hediye',
       geschenkText: 'Varlığınız bizim için en değerli hediye. Yine de bir şey vermek isteyenler için: '
                   + 'Kapadokya’ya balayı için biriktiriyoruz.',
+      musikAn: 'Müziği kapat', musikAus: 'Müziği aç',
       kopieren: 'Kopyala', kopiert: 'Kopyalandı', kopierenHand: 'Lütfen elle kopyalayın',
 
       rsvpTitel: 'Katılım bildirimi',

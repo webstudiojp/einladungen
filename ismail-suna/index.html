@@ -34,12 +34,13 @@ if (!location.hash) {
   addEventListener('load', () => { if (!location.hash) window.scrollTo(0, 0); });
 }
 </script>
-<link rel="stylesheet" href="css/style.css?v=202608312001">
-<link rel="stylesheet" href="css/karte.css?v=202608312001">
+<link rel="stylesheet" href="css/style.css?v=202608312254">
+<link rel="stylesheet" href="css/karte.css?v=202608312254">
 </head>
 <body>
 
 <!-- ============ UMSCHLAG-INTRO ============ -->
+<audio id="musik" loop preload="none"></audio>
 <div class="knopfleiste">
 <button class="sprachwahl" id="sprachwahl" type="button" aria-label="Sprache wechseln / Dili değiştir">
   <!-- Als SVG gezeichnet, nicht als Emoji: Windows stellt Flaggen-Emoji
@@ -69,7 +70,14 @@ if (!location.hash) {
     </svg>
   </span>
 </button>
-
+<button class="musikknopf" id="btn-musik" type="button" hidden aria-label="Musik">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path class="mk-note" d="M9 18V5l10-2v13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="mk-note" cx="6.5" cy="18" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <circle class="mk-note" cx="16.5" cy="16" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path class="mk-strich" d="M4 20L20 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
+</button>
 </div>
 
 <div id="envelope-screen" class="screen">
@@ -105,7 +113,7 @@ if (!location.hash) {
   <button id="skip" class="skip" hidden>Überspringen</button>
 
   <div class="hero-grund" aria-hidden="true">
-    <img src="assets/img/allee.webp?v=202608312001" alt="" decoding="async">
+    <img src="assets/img/allee.webp?v=202608312254" alt="" decoding="async">
   </div>
 
   <svg id="scene" class="scene" viewBox="0 0 1000 1800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -129,7 +137,7 @@ if (!location.hash) {
     </defs>
 
     <!-- Die Allee -->
-    <image href="assets/img/allee.webp?v=202608312001" x="0" y="0" width="1000" height="1800"
+    <image href="assets/img/allee.webp?v=202608312254" x="0" y="0" width="1000" height="1800"
            preserveAspectRatio="xMidYMid slice"/>
 
     <!-- Perlen, die aus dem Heck rieseln -->
@@ -153,7 +161,7 @@ if (!location.hash) {
            ein zweites, dunkles Auto. -->
       <ellipse cx="22" cy="48" rx="102" ry="262" fill="#120d07" opacity=".34" filter="url(#weich)"/>
       <g filter="url(#tempo)">
-        <image href="assets/img/wagen.webp?v=202608312001" x="-150" y="-320" width="300" height="639"/>
+        <image href="assets/img/wagen.webp?v=202608312254" x="-150" y="-320" width="300" height="639"/>
       </g>
     </g>
 
@@ -176,7 +184,7 @@ if (!location.hash) {
   <!-- ---------- Kopf der Karte ---------- -->
   <section class="sek kopf" id="sek-kopf">
     <div class="kulisse" aria-hidden="true">
-      <img class="kulisse-grund" data-px="5" src="assets/img/rahmen.webp?v=202608312001" alt="" loading="eager" decoding="async">
+      <img class="kulisse-grund" data-px="5" src="assets/img/rahmen.webp?v=202608312254" alt="" loading="eager" decoding="async">
       <div class="tauben" id="tauben"></div>
       <div class="falterfeld" id="falterfeld"></div>
       <span class="kulisse-schleier"></span>
@@ -207,7 +215,7 @@ if (!location.hash) {
   </section>
   <!-- ---------- Ein Bild, das die Seite einmal aufreisst ---------- -->
   <section class="grossbild" id="sek-zitat" aria-label="Bildmoment">
-    <img class="gb-bild" data-px="8" src="assets/img/g4-tafel.webp?v=202608312001" alt="" loading="lazy" decoding="async">
+    <img class="gb-bild" data-px="8" src="assets/img/g4-tafel.webp?v=202608312254" alt="" loading="lazy" decoding="async">
     <span class="gb-schleier"></span>
     <div class="gb-text">
       <p class="gb-gross rv" data-rv="1" id="zitat-gross"></p>
@@ -216,7 +224,7 @@ if (!location.hash) {
   </section>
   <!-- ---------- Countdown (Kontrastmoment, volle Breite) ---------- -->
   <section class="sek-breit countdown" id="sek-countdown" aria-label="Countdown">
-    <img class="cd-grund" data-px="7" src="assets/img/g5-lichter.webp?v=202608312001" alt="" loading="lazy" decoding="async">
+    <img class="cd-grund" data-px="7" src="assets/img/g5-lichter.webp?v=202608312254" alt="" loading="lazy" decoding="async">
     <span class="cd-schleier"></span>
     <p class="ueberzeile hell" id="cd-ueber">Noch</p>
     <div class="cd-reihe" id="cd-reihe" role="timer" aria-live="off">
@@ -268,7 +276,7 @@ if (!location.hash) {
   </section>
   <!-- ---------- Abschied ---------- -->
   <section class="grossbild abschied" id="sek-abschied" aria-label="Abschied">
-    <img class="gb-bild" data-px="8" src="assets/img/g1-strauss.webp?v=202608312001" alt="" loading="lazy" decoding="async">
+    <img class="gb-bild" data-px="8" src="assets/img/g1-strauss.webp?v=202608312254" alt="" loading="lazy" decoding="async">
     <span class="gb-schleier"></span>
     <div class="gb-text">
       <p class="ab-gross rv" data-rv="1" id="abschied-gross"></p>
@@ -300,8 +308,8 @@ if (!location.hash) {
   <p class="lupe-text" id="lupe-text"></p>
 </div>
 
-<script src="js/config.js?v=202608312001"></script>
-<script src="js/hero.js?v=202608312001"></script>
-<script src="js/karte.js?v=202608312001"></script>
+<script src="js/config.js?v=202608312254"></script>
+<script src="js/hero.js?v=202608312254"></script>
+<script src="js/karte.js?v=202608312254"></script>
 </body>
 </html>

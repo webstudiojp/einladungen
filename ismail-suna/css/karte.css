@@ -528,12 +528,22 @@ html{scrollbar-color:var(--linie) var(--leinen)}
 }
 .datum{margin-inline:auto;max-width:24rem}
 
-/* ---- Sprachwahl: ein ruhiger Knopf oben ---- */
+/* ---- Sprachwahl und Musik: zwei ruhige Knoepfe oben ---- */
 .knopfleiste{
   position:fixed;top:max(14px,env(safe-area-inset-top));left:14px;z-index:60;
   display:flex;align-items:center;gap:8px;
 }
+.sprachwahl,.musikknopf{
+  background:rgba(30,24,18,.42);color:#f0e5d2;
+  border:1px solid rgba(240,229,210,.28);border-radius:999px;
+  backdrop-filter:blur(6px);cursor:pointer;
+  font-family:Arial,Helvetica,sans-serif;
+  transition:background .22s var(--ease-out-quart),color .22s var(--ease-out-quart);
+}
 .sprachwahl{
+  padding:6px 9px;display:flex;align-items:center;gap:7px;
+}
+.musikknopf{
   background:rgba(30,24,18,.42);color:#f0e5d2;
   border:1px solid rgba(240,229,210,.28);border-radius:999px;
   backdrop-filter:blur(6px);cursor:pointer;
@@ -552,10 +562,33 @@ html{scrollbar-color:var(--linie) var(--leinen)}
 .flagge svg{width:100%;height:100%;display:block}
 .flagge.aktiv{opacity:1;filter:none;transform:scale(1.09)}
 .sprachwahl:hover .flagge:not(.aktiv){opacity:.62}
-.sprachwahl:hover{background:rgba(30,24,18,.66)}
+.sprachwahl:hover,.musikknopf:hover{background:rgba(30,24,18,.66)}
+.musikknopf{
+  width:38px;height:38px;padding:0;
+  display:grid;place-items:center;
+}
+/* Ohne das ueberstimmt display:grid das hidden-Attribut und ein toter
+   Schalter waere sichtbar, obwohl keine Musikdatei vorliegt. */
+.musikknopf[hidden]{display:none}
+.musikknopf svg{width:19px;height:19px}
+.musikknopf .mk-strich{opacity:1}
+.musikknopf.laeuft .mk-strich{opacity:0}
+.musikknopf.laeuft .mk-note{animation:mk-puls 2.4s ease-in-out infinite}
+@keyframes mk-puls{0%,100%{opacity:1}50%{opacity:.55}}
+
+.flagge{
+  display:block;width:23px;height:23px;line-height:0;
+  opacity:.38;filter:saturate(.5);
+  transition:opacity .25s var(--ease-out-quart),filter .25s var(--ease-out-quart),
+             transform .25s var(--ease-out-quart);
+}
+.flagge svg{width:100%;height:100%;display:block}
+.flagge.aktiv{opacity:1;filter:none;transform:scale(1.09)}
+.sprachwahl:hover .flagge:not(.aktiv){opacity:.62}
+.sprachwahl:hover,.musikknopf:hover{background:rgba(30,24,18,.66)}
 
 /* Auf der hellen Karte umschalten, sonst verschwindet der Knopf */
-body.hell-oben .sprachwahl{
+body.hell-oben .sprachwahl,body.hell-oben .musikknopf{
   background:rgba(255,253,248,.82);color:var(--tinte);
   border-color:rgba(47,41,33,.14);
 }

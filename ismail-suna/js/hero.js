@@ -339,6 +339,7 @@
     const env = $('envelope');
     if (env.dataset.done) return;
     env.dataset.done = '1';
+    if (window.HOCHZEIT_MUSIK_START) window.HOCHZEIT_MUSIK_START();
     $('env-flap').classList.add('open');
     env.classList.add('offen');
     // Die Karte braucht ihren Auftritt, bevor die Allee uebernimmt

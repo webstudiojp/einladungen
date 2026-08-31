@@ -415,6 +415,8 @@
     });
 
 
+    musikKnopfBeschriften();
+
     if (ersterAufbau) ersterAufbau = false;
     else if (typeof reveals === 'function') reveals();
   }
@@ -590,6 +592,51 @@
       rHinweis.textContent = zusage.value === 'ja' ? S.rsvpJa : S.rsvpNein;
       rHinweis.scrollIntoView({ behavior: 'smooth', block: 'center' });
       if (zusage.value === 'ja') bluetenregen();
+    });
+  }
+
+  /* =========================================================
+     10. Musik
+     Autoplay mit Ton ist überall gesperrt. Der Umschlag ist der
+     erste Fingertipp des Gastes — und damit die einzige Stelle,
+     an der Musik überhaupt starten darf.
+     ========================================================= */
+  const klang = $('musik');
+  const musikKnopf = $('btn-musik');
+  let musikAn = false;
+
+  function musikKnopfBeschriften() {
+    if (!musikKnopf) return;
+    musikKnopf.setAttribute('aria-label', musikAn ? S.musikAn : S.musikAus);
+    musikKnopf.classList.toggle('laeuft', musikAn);
+  }
+  // Quelle aus der Konfiguration. Fehlt die Datei, schlaegt play() fehl und
+  // der Knopf bleibt verborgen - niemand sieht einen toten Schalter.
+  if (klang && C.musik && C.musik.datei) klang.src = mitVersion(C.musik.datei);
+  function musikVorhanden() { return klang && klang.getAttribute('src'); }
+  window.HOCHZEIT_MUSIK_START = () => {
+    if (!musikVorhanden() || !C.musik.starten) return;
+    try { if (localStorage.getItem('musik') === 'aus') return; } catch { /* egal */ }
+    klang.volume = 0;
+    klang.play().then(() => {
+      musikAn = true;
+      musikKnopf.hidden = false;
+      musikKnopfBeschriften();
+      // sanft einblenden statt hereinplatzen
+      const ziel = C.musik.lautstaerke, schritt = ziel / 40;
+      const auf = setInterval(() => {
+        klang.volume = Math.min(ziel, klang.volume + schritt);
+        if (klang.volume >= ziel - 0.001) clearInterval(auf);
+      }, 50);
+    }).catch(() => { /* Browser hat abgelehnt - kein Drama */ });
+  };
+  if (musikKnopf) {
+    musikKnopf.addEventListener('click', () => {
+      if (!musikVorhanden()) return;
+      if (musikAn) { klang.pause(); musikAn = false; }
+      else { klang.volume = C.musik.lautstaerke; klang.play().catch(() => {}); musikAn = true; }
+      try { localStorage.setItem('musik', musikAn ? 'an' : 'aus'); } catch { /* egal */ }
+      musikKnopfBeschriften();
     });
   }
 
