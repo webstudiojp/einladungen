@@ -197,7 +197,12 @@
 
     // Kopf
     const mono = $('monogramm');
-    if (mono) mono.textContent = C.braeutigam.charAt(0) + ' · ' + C.braut.charAt(0);
+    // Die Initialen folgen der Reihenfolge, in der die Namen stehen -
+    // sonst zeigt das Monogramm İ · S, waehrend darunter Suna & İsmail steht.
+    if (mono) {
+      const teile = C.namen.split(/\s*&\s*/);
+      mono.textContent = teile.map(t => t.trim().charAt(0)).join(' · ');
+    }
     setzen('k-namen', C.namen);
     setzen('k-zeile', S.heroZeile);
     setzen('kopf-ueber', S.kopfUeberzeile);
@@ -209,7 +214,21 @@
     setzen('btn-kalender-text', S.kalenderKnopf);
 
     // Anrede
-    setzen('a-text', S.anredeText);
+    // Die Anrede kann aus mehreren Absaetzen bestehen. textContent wuerde
+    // Zeilenumbrueche schlucken, also je Absatz ein eigenes <p>.
+    const aText = $('a-text');
+    if (aText) {
+      if (Array.isArray(S.anredeText)) {
+        aText.innerHTML = '';
+        S.anredeText.forEach((z, i) => {
+          const p = el('p', 'anrede-absatz');
+          p.textContent = z;
+          aText.appendChild(p);
+        });
+      } else {
+        aText.textContent = S.anredeText;
+      }
+    }
     setzen('a-gruss', S.anredeGruss);
 
     // Bildmomente

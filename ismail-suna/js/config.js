@@ -11,7 +11,7 @@ window.HOCHZEIT = {
 
   // Wird von bin/veroeffentlichen.sh gesetzt und an alle Bilder gehaengt,
   // damit Browser nach einer Aenderung nicht die alte Fassung zeigen.
-  version: '202608292218',
+  version: '202608312001',
 
   /* ---------- Sprachen ---------- */
   standardsprache: 'de',
@@ -21,7 +21,7 @@ window.HOCHZEIT = {
   /* Noch offen: beide Nachnamen. */
   braut:        'Suna',
   braeutigam:   'İsmail',
-  namen:        'İsmail & Suna',
+  namen:        'Suna & İsmail',
   datumKurz:    '21.11.2026',
   datumISO:     '2026-11-21',
   /* Mit Zeitzonenversatz, sonst rechnen Countdown und Kalendereintrag in
@@ -56,9 +56,9 @@ window.HOCHZEIT = {
       namen:    ['Dürdane und Mehmet Mustafa Bozhüyük'],
       namen_tr: ['Dürdane ve Mehmet Mustafa Bozhüyük'] },
     { schluessel: 'brautseite',
-      namen:    ['Hasret und der verstorbene Süleyman Çikin'],
-      namen_tr: ['Hasret ve merhum Süleyman Çikin'] },
-    { schluessel: 'trauzeugen',      namen: ['Annemaria Amedahevi', 'Küşat'] },   // TODO Nachname Küşat
+      namen:    ['Hasret und der verstorbene Süleyman Çıkın'],
+      namen_tr: ['Hasret ve merhum Süleyman Çıkın'] },
+    { schluessel: 'trauzeugen',      namen: ['Annemaria Amedahevi', 'Küşat Altun'] },
   ],
 
   /* ---------- Geschenke ---------- */
@@ -120,10 +120,14 @@ window.HOCHZEIT = {
       kalenderFertig: 'Gespeichert',
       kalenderNotiz: adr => 'Wir freuen uns auf euch. Alle Angaben zum Tag: ' + adr,
 
-      anredeText: 'Am 21. November geben wir uns das Ja-Wort. '
-                + 'Wir würden uns freuen, wenn ihr dabei seid – zur Trauung, '
-                + 'zum Essen und danach so lange, wie ihr mögt.',
-      anredeGruss: 'Suna und Ismail',
+      /* Mehrere Absaetze: karte.js baut daraus je ein <p>. */
+      anredeText: [
+        'Am 21. November möchten wir diesen besonderen Tag mit euch feiern.',
+        'Freut euch auf gutes Essen, Musik und viele schöne Momente. '
+          + 'Lasst uns gemeinsam lachen, tanzen und einfach eine wundervolle Zeit haben.',
+        'Wir freuen uns auf einen unvergesslichen Abend mit euch!',
+      ],
+      anredeGruss: 'Suna & İsmail',
 
       zitat: 'Ein Tag. Und danach alle anderen.',
       zitatKlein: 'Wir freuen uns darauf, ihn mit euch anzufangen.',
@@ -241,10 +245,13 @@ window.HOCHZEIT = {
       kalenderFertig: 'Eklendi',
       kalenderNotiz: adr => 'Sizi aramızda görmek için sabırsızlanıyoruz. Günün tüm ayrıntıları: ' + adr,
 
-      anredeText: '21 Kasım günü hayatımızı birleştiriyoruz. '
-                + 'Bu özel günümüzde sizi de aramızda görmekten mutluluk duyarız – '
-                + 'nikâhta, yemekte ve sonrasında dilediğiniz kadar.',
-      anredeGruss: 'Suna ve Ismail',
+      anredeText: [
+        '21 Kasım günü bu özel günü sizinle birlikte kutlamak istiyoruz.',
+        'Güzel yemekler, müzik ve nice güzel anlar sizi bekliyor. '
+          + 'Birlikte gülelim, dans edelim ve harika bir zaman geçirelim.',
+        'Sizinle unutulmaz bir akşam geçirmeyi dört gözle bekliyoruz!',
+      ],
+      anredeGruss: 'Suna & İsmail',
 
       zitat: 'Bir gün. Ve ardından bütün diğerleri.',
       zitatKlein: 'Bu güne sizinle başlamak bizi mutlu edecek.',

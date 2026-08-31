@@ -995,3 +995,7 @@ body.hell-oben .sprachwahl{
 }
 .gal-leer-zeichen{display:block;width:clamp(30px,7vw,44px);color:#b8ac93}
 .gal-leer-zeichen svg{width:100%;height:auto;display:block}
+
+/* ---- Anrede in mehreren Absätzen ---- */
+.anrede-absatz{margin:0 0 .9em}
+.anrede-absatz:last-child{margin-bottom:0}
