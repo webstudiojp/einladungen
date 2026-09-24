@@ -38,9 +38,9 @@ window.FEST = {
   uhrzeitLang: '11 bis 17 Uhr',
 
   /* Rueckmeldung */
-  fristISO:    '2026-11-11',
-  fristLang:   'Mittwoch, 11. November 2026',
-  fristKurz:   '11.11.2026',
+  fristISO:    '2026-11-07',
+  fristLang:   'Samstag, 7.\u00a0November 2026',
+  fristKurz:   '07.11.2026',
 
   /* Ort. Die Koordinaten sind nachgeschlagen, nicht geraten --
      der Routenknopf fuehrt damit auf den Hof und nicht in die
@@ -53,23 +53,19 @@ window.FEST = {
   lon:         6.9136552,
 
   /* --- Der Ablauf des Tages ------------------------------
-     Nur die erste Zeile ist gesichert -- der Beginn stand in
-     der Anfrage. Alles darunter ist ein Vorschlag, wie so ein
-     Tag üblicherweise läuft; bitte prüfen oder streichen.
+     So hat Doris ihn aufgeschrieben (Zettel vom 24.09.2026).
      Eine Zeile entfernen heißt: die Zeile hier löschen.     */
   ablauf: [
-    { zeit: '11:00', titel: 'Empfang',       text: 'Ankommen, Sektempfang im Foyer.' },
-    { zeit: '12:30', titel: 'Mittagessen',   text: 'Gemeinsames Essen im Saal.' },
+    { zeit: '11:00', titel: 'Empfang',       text: 'Ankommen.' },
+    { zeit: '12:30', titel: 'Mittagessen',   text: 'In Buffetform.' },
     { zeit: '15:00', titel: 'Kaffee und Kuchen', text: 'Zeit zum Reden, Zeit für Geschichten.' },
-    { zeit: '17:00', titel: 'Ausklang',      text: 'Gegen 17 Uhr lassen wir den Tag ausklingen.' },
+    { zeit: '17:00', titel: 'Ausklang',      text: 'Dann sind wir wahrscheinlich alle geschafft.' },
   ],
 
   /* --- Gut zu wissen -------------------------------------
      Bei diesem Anlass die wichtigsten Angaben überhaupt:
-     viele Gäste sind selbst über siebzig. Was hier steht,
-     ist noch nicht bestätigt.                               */
+     viele Gäste sind selbst über siebzig. Von Doris bestätigt. */
   hinweise: [
-    { titel: 'Parken',        text: 'Vor dem Haus stehen Parkplätze zur Verfügung.' },
-    { titel: 'Barrierefrei',  text: 'Der Saal ist ebenerdig erreichbar.' },
+    { titel: 'Parken',        text: 'Parkplätze gibt es an der Straße und auf dem hoteleigenen Parkplatz.' },
   ],
 };

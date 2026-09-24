@@ -8,10 +8,10 @@
 <meta name="theme-color" content="#f4ede3">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Doris Diesinger wird 90">
-<meta property="og:description" content="Samstag, 21. November 2026 · 11 bis 17 Uhr · Hotel am Wald, Monheim am Rhein">
+<meta property="og:title" content="Doris wird 90!">
+<meta property="og:description" content="Gefeiert wird am Samstag, 21. November 2026.">
 <meta property="og:image" content="bilder/vorschau.jpg">
-<link rel="stylesheet" href="css/karte.css?v=202609201017">
+<link rel="stylesheet" href="css/karte.css?v=202609242136">
 </head>
 <body>
 
@@ -29,8 +29,9 @@
   <div class="ballons" data-ballons aria-hidden="true"></div>
 
   <div class="auftakt-satz">
-    <p class="ueber">Ich werde neunzig</p>
-    <p class="zahl" aria-hidden="true">90</p>
+    <p class="ueber">Einladung zu meinem</p>
+    <p class="zahl">90<span class="zahl-punkt">.</span></p>
+    <p class="ueber ueber--unter">Geburtstag</p>
     <h1 class="titel" data-name>&nbsp;</h1>
     <div class="zierlinie" aria-hidden="true"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg><i></i></div>
     <p class="auftakt-termin">
@@ -48,8 +49,7 @@
 <!-- ═══ Bis dahin ═════════════════════════════════════════ -->
 <section class="bogen bogen--zaehler" data-tritt>
   <div class="kopf">
-    <p class="kicker">Noch</p>
-    <h2>Bis dahin</h2>
+    <h2>Bis dahin sind es noch</h2>
     <div class="zierlinie" aria-hidden="true"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg><i></i></div>
   </div>
   <ol class="uhr" data-uhr>
@@ -63,11 +63,8 @@
 <!-- ═══ Die Einladung ═════════════════════════════════════ -->
 <section class="bogen bogen--eng" data-tritt>
   <p class="anrede">Liebe Familie, liebe Freunde,</p>
-  <p class="satz gross">neunzig Jahre — das möchte ich feiern, und zwar
-     mit allen, die dazugehören.</p>
-  <p class="satz">Ich habe das <span data-ort-name>Hotel am Wald</span> für uns.
-     Es gibt etwas Ordentliches zu essen, und Zeit zum Reden ist genug.
-     Kommt, wie ihr seid.</p>
+  <p class="satz gross">neunzig Jahre — das möchte ich gerne mit Euch
+     allen feiern.</p>
   <p class="gruss" data-gastgeber>&nbsp;</p>
 </section>
 
@@ -122,8 +119,8 @@
     <div class="zierlinie" aria-hidden="true"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"/></svg><i></i></div>
   </div>
   <p class="satz gross">Bitte sagt mir bis
-     <strong data-frist-lang>Mittwoch, 11. November 2026</strong> Bescheid,
-     damit ich weiß, für wie viele ich das Essen bestellen muss.</p>
+     <strong data-frist-lang>Samstag, 7. November 2026</strong> Bescheid,
+     damit wir planen können.</p>
   <p class="antwort-kontakt">
     <a class="taste taste--voll" data-telefon href="#"><span data-rueck-name>&nbsp;</span> anrufen</a>
     <span class="antwort-nummer" data-rueck-telefon>&nbsp;</span>
@@ -134,15 +131,18 @@
 
 <footer class="fuss">
   <p class="fuss-zahl" aria-hidden="true">90</p>
-  <p class="fuss-satz">Ich freue mich auf euch.</p>
-  <p class="fuss-klein">
-    <span data-name-lang>&nbsp;</span> ·
-    <span data-datum-kurz>21.11.2026</span> ·
+  <!-- Reihenfolge wie auf Doris' Zettel "Als Letztes":
+       Name, Feier mit Datum und Ort, dann der Satz. -->
+  <p class="fuss-name" data-name-lang>&nbsp;</p>
+  <p class="fuss-feier">
+    Feier: <span data-datum-kurz>21.11.2026</span>
+    <span class="punkt" aria-hidden="true">·</span>
     <span data-ort-name>Hotel am Wald</span>
   </p>
+  <p class="fuss-satz">Ich freue mich auf Euch.</p>
 </footer>
 
-<script src="js/daten.js?v=202609201017"></script>
-<script src="js/karte.js?v=202609201017"></script>
+<script src="js/daten.js?v=202609242136"></script>
+<script src="js/karte.js?v=202609242136"></script>
 </body>
 </html>
