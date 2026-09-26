@@ -57,7 +57,7 @@ window.FEST = {
      Eine Zeile entfernen heißt: die Zeile hier löschen.     */
   ablauf: [
     { zeit: '11:00', titel: 'Empfang',       text: 'Ankommen.' },
-    { zeit: '12:30', titel: 'Mittagessen',   text: 'In Buffetform.' },
+    { zeit: '12:00', titel: 'Mittagessen',   text: 'In Buffetform.' },
     { zeit: '15:00', titel: 'Kaffee und Kuchen', text: 'Zeit zum Reden, Zeit für Geschichten.' },
     { zeit: '17:00', titel: 'Ausklang',      text: 'Dann sind wir wahrscheinlich alle geschafft.' },
   ],

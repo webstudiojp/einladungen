@@ -109,8 +109,10 @@ img{display:block;max-width:100%;height:auto}
 /* "Geburtstag" unter der Zahl: derselbe Satz wie darueber,
    nur mit Luft zur Zahl statt zum Namen. */
 .ueber--unter{margin:.9em 0 .2em}
-/* Der Punkt haengt rechts hinaus, damit die 90 selbst mittig steht. */
-.zahl-punkt{margin-right:-.28em}
+/* Der Punkt steht ausserhalb des Satzes: gemittelt wird nur die 90,
+   der Punkt haengt rechts daneben und schiebt nichts. */
+.zahl-kern{position:relative;display:inline-block}
+.zahl-punkt{position:absolute;left:100%;bottom:0}
 .titel{
   font-family:Fraunces,Georgia,serif;font-weight:500;
   font-size:clamp(1.9rem,8.4vw,3.4rem);line-height:1.04;
@@ -119,13 +121,9 @@ img{display:block;max-width:100%;height:auto}
 .auftakt-termin{
   margin-top:.2em;font-size:clamp(1rem,3.9vw,1.25rem);color:var(--tinte-leise);
 }
+/* Drei Zeilen, wie Doris es wollte: Satz, Tag, Uhrzeit. */
 .auftakt-termin > span{display:block}
-.auftakt-termin > .punkt{display:none}
-@media (min-width:430px){
-  .auftakt-termin{display:flex;flex-wrap:wrap;justify-content:center;gap:.1em .55em}
-  .auftakt-termin > span{display:inline}
-  .auftakt-termin > .punkt{display:inline;color:var(--akzent)}
-}
+.auftakt-tag{color:var(--tinte);font-weight:500}
 
 /* Zierlinie mit Stern -- derselbe Abschnittsschmuck wie im Kopf
    jedes Bogens, damit Auftakt und Seite eine Sprache sprechen. */
